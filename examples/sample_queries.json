@@ -1,0 +1,4 @@
+[
+  {"natural_language": "List all students enrolled in the 'Database Systems' course.", "sql": "...", "description": "Fetch students enrolled in a specific course"},
+  {"natural_language": "Which professors teach in the Computer Science department?", "sql": "...", "description": "Find professors linked to a department"}
+]
