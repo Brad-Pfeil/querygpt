@@ -1,23 +1,23 @@
 [project]
 name = "querygpt"
 version = "0.1.0"
-requires-python = ">=3.12"
+requires-python = ">=3.13,<3.14"
 description = "Modular NL-to-SQL pipeline inspired by QueryGPT"
 
 
 dependencies = [
-    "dotenv>=0.9.9",
+    "python-dotenv",
     "llama-index>=0.12.49",
     "pydantic-ai>=0.4.2",
-    "psycopg2-binary",
-    "pandas",
+    "psycopg[binary]",
+    "polars",
     "neo4j",
 ]
 
 [project.optional-dependencies]
 dev = [
     "ruff",
-    "mypy"
+    "ty"
 ]
 
 [project.scripts]
@@ -28,7 +28,17 @@ packages = ["src"]
 
 [tool.ruff]
 line-length = 88
-target-version = "py312"
+target-version = "py313"
 
 [tool.ruff.format]
 quote-style = "double"
+
+[tool.ty]
+
+[tool.ty.src]
+exclude = ["tests/", "**/test_*.py"]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+]
